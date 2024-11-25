@@ -1,0 +1,1 @@
+{"level":"info","AppName":"edge-app","LoggerName":"Zerolog","Category":"RequestResponse","SubCategory":"Api","BodySize":37,"ClientIp":"::1","ErrorMessage":"","Latency":3650.827483,"Method":"GET","Path":"/api/v1/","RequestBody":"","ResponseBody":"{\"result\":{\"sequence\":10,\"Req\":null}}","StatusCode":200,"time":"2024-11-25T16:32:38+03:30","message":"/api/v1/"}

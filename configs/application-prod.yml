@@ -1,0 +1,41 @@
+application:
+  name: edge-app
+server:
+  port: 8099
+  runMode: release
+banner:
+  filePath: ./app/configs/banner.txt
+logging:
+  filePath: ./app/logs/
+  fileName: edge-app.log
+  encoding: json
+  level: info
+  logger: zerolog
+  console: true
+otel:
+  serviceName: edge-app
+  serviceVersion: 0.1.0
+  bearerToken: Bearer $API_TOKEN
+  insecure: true
+  deploymentEnvironment: "production"
+  language: "golang"
+kafka:
+  bootstrapServers: kafka.test.local:49153,kafka.test.local:49154,kafka.test.local:49154
+  schemaRegistry: http://localhost:8090
+  messageMaxBytes: 100000
+  allowAutoCreateTopics: false
+  securityProtocol: plaintext
+  consumer:
+    groupID: test2
+    autoOffsetReset: earliest
+    maxPollIntervalMs: 300000
+    enableAutoCommit: false
+  producer:
+    enableIdempotence: true
+    acks: all
+    retries: 10
+
+publicKeys:
+  - garm_client: your public key
+validScopes:
+  - garm_client: profile,email
