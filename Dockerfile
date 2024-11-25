@@ -33,8 +33,6 @@ RUN upx -9 /app/edge
 FROM alpine:latest
 RUN apk add ca-certificates
 
-# Install SQLite
-RUN apk add --no-cache sqlite
 
 COPY --from=builder /app/edge /app/edge
 COPY --from=builder /app/configs/application-dev.yml /app/configs/application-dev.yml
